@@ -21,7 +21,7 @@ An ECG signal processing application for QRS complex delineation using Discrete 
 -   **Core Algorithm:**
     1.  **Convolution:** The DWT is implemented as a direct convolution between the input ECG signal and the pre-calculated, normalized wavelet filter coefficients for each scale.
     2.  **Adaptive Thresholding:** Dynamic thresholds are calculated using the Root Mean Square (RMS) of the wavelet-transformed signal over a moving window.
-    3.  **Fiducial Point Logic:** R-peaks are found by confirming significant events across multiple scales. QRS boundaries are then determined by searching for local minima and threshold crossings in the wavelet domain around each R-peak.
+    3.  **Peak Validation:** R-peaks are found by confirming significant events across multiple scales. QRS boundaries are then determined by searching for local minima and threshold crossings in the wavelet domain around each R-peak.
 -   **Data Structures:** Utilizes generic `TDictionary` collections for managing filter and wavelet data, and dynamic arrays (`TDoubleArray`, `TIntegerArray`) for efficient signal manipulation.
 
 ---
