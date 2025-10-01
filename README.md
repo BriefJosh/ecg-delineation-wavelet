@@ -5,7 +5,7 @@ An ECG signal processing application for QRS complex delineation using Discrete 
 
 -   **ECG Data Loading:** Loads time-series ECG data from standard `.txt` or `.dat` files.
 -   **Signal Pre-processing:** Centers the signal by removing the DC offset (mean).
--   **Multi-Scale Wavelet Transform:** Applies a CWT across 8 predefined scales ($2^1$ to $2^8$) to decompose the ECG signal. The wavelet coefficients are derived from the first derivative of a quadratic spline function.
+-   **Multi-Scale Wavelet Transform:** Applies a DWT across 8 predefined scales ($2^1$ to $2^8$) to decompose the ECG signal. The wavelet coefficients are derived from the first derivative of a quadratic spline function.
 -   **Robust R-Peak Detection:** Implements a multi-scale algorithm that identifies R-peak candidates by analyzing modulus maxima and adaptive, RMS-based thresholds across scales `s1` through `s4`. Zero-crossings at the finest scale (`s1`) are used to precisely locate the R-peak.
 -   **QRS Complex Delineation:** After R-peak detection, the algorithm analyzes the wavelet transform at scale `s2` to accurately determine the **QRS onset** (start) and **QRS offset** (end) points for each heartbeat.
 -   **Comprehensive Visualization:** The user interface, built with VCL, features:
@@ -19,7 +19,7 @@ An ECG signal processing application for QRS complex delineation using Discrete 
 -   **Language:** **Delphi (Object Pascal)**
 -   **Framework:** **VCL (Visual Component Library)** for the graphical user interface.
 -   **Core Algorithm:**
-    1.  **Convolution:** The CWT is implemented as a direct convolution between the input ECG signal and the pre-calculated, normalized wavelet filter coefficients for each scale.
+    1.  **Convolution:** The DWT is implemented as a direct convolution between the input ECG signal and the pre-calculated, normalized wavelet filter coefficients for each scale.
     2.  **Adaptive Thresholding:** Dynamic thresholds are calculated using the Root Mean Square (RMS) of the wavelet-transformed signal over a moving window.
     3.  **Fiducial Point Logic:** R-peaks are found by confirming significant events across multiple scales. QRS boundaries are then determined by searching for local minima and threshold crossings in the wavelet domain around each R-peak.
 -   **Data Structures:** Utilizes generic `TDictionary` collections for managing filter and wavelet data, and dynamic arrays (`TDoubleArray`, `TIntegerArray`) for efficient signal manipulation.
