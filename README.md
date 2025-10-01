@@ -33,3 +33,19 @@ An ECG signal processing application for QRS complex delineation using Discrete 
 3.  Once the data is loaded and displayed, click the **"Delineate ECG"** button to run the analysis.
 4.  View the final delineated points on the main chart in the "Final Delineation" tab.
 5.  Explore the "Wavelet Scales" tab to see the detailed analysis for each of the 8 wavelet scales.
+
+---
+
+## Screenshots & Examples
+
+Here are some examples of the application's user interface and the final delineation output.
+
+### Main Application Window
+*The main view after loading an ECG signal and running the delineation process. The final R-peaks, QRS onsets, and offsets are clearly marked on the original signal.*
+![Main GUI with Delineation](images/outputExample1.png)
+
+---
+
+### Wavelet Scale Analysis
+*A view of the wavelet transform across 8 predefined scales ($2^1$ to $2^8$). The charts shows the transformed signal, the adaptive RMS threshold, and the detected modulus maxima used for analysis.*
+![Wavelet Scales Analysis](images/outputExample2.png)
