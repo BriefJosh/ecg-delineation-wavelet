@@ -47,5 +47,5 @@ Here are some examples of the application's user interface and the final delinea
 ---
 
 ### Wavelet Scale Analysis
-*A view of the wavelet transform across 8 predefined scales ($2^1$ to $2^8$). The charts shows the transformed signal, the adaptive RMS threshold, and the detected modulus maxima used for analysis.*
+*A view of the wavelet transform across scales `s1` through `s8`. The charts shows the transformed signal, the adaptive RMS threshold, and the detected modulus maxima used for analysis.*
 ![Wavelet Scales Analysis](images/outputExample2.png)
